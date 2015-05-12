@@ -3,7 +3,7 @@
 Plugin Name: WP Smart Carousel
 Plugin URI:  http://touchpointdev.com/wp-smart-carousel/
 Description: In this smart carosuel you will get various style and feature with dynamic multiple shortcode. WP Smart Carousel it's supper easy to use.
-Author: Rana Ahmed
+Author: Touch Point Dev
 Author URI: http://touchpointdev.com
 Version: 2.1
 */
