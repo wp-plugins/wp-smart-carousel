@@ -59,7 +59,8 @@ Just Contact Us Click Here: <a href="http://www.touchpointdev.com" target="_blan
 Soon premimum version will release there you can get lot's of more option and style.
 
 == Screenshots ==
-
+1. Plugin Demo Screenshot
+2. Plugin Generate Shortcode Button
 
 == Changelog ==
 
