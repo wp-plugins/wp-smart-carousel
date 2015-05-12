@@ -56,7 +56,7 @@ Just Contact Us Click Here: <a href="http://www.touchpointdev.com" target="_blan
 
 = Why this plugin has few options? =
 
-Soon premimum version will release there you can get lot's of more option and style.
+Soon premium version will be release there you can get lot's of more options and style.
 
 == Screenshots ==
 1. Plugin Demo Screenshot
