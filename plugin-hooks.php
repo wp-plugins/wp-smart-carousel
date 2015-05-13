@@ -106,14 +106,18 @@ function tp_smooth_carousel_list_shortcode($atts){
 		'id' => 'demo',
 		'count' => '10',
 		'items' => '4',
-		'navigation' => 'true',
+		'navigation' => 'false',
+		'post_type' => 'tp-carousel-items',
+		'margin' => '4px',
 		'autoplay' => 'true',
-		'pagination' => 'false',
-		'category' => '',
+		'content_style' => 'block',
+		'pagination' => 'true',
+		'custom_category' => '',
+		'post_category' => '',
 	), $atts, 'projects' ) );
 	
     $q = new WP_Query(
-        array('posts_per_page' => $count, 'post_type' => 'tp-carousel-items', 'tpcarousel_cat' => $category )
+        array('posts_per_page' => $count, 'post_type' => $post_type, 'tpcarousel_cat' => $custom_category, 'category_name' => $post_category, 'orderby' => 'meta_value','order' => 'DESC' )
         );		
 
 	$list = '
@@ -131,7 +135,6 @@ function tp_smooth_carousel_list_shortcode($atts){
 		}); 
 	</script>
 <style type="text/css">
-	div.owl-carousel .item{ margin: 4px;}
 	div.owl-carousel  .item img{ display: block; width: 100%; height: auto; border-radius:none;	}
 	.entry-content img, .comment-content img, .widget img, img.header-image, .author-avatar img, img.wp-post-image {
   border-radius: 0px;
@@ -144,8 +147,8 @@ function tp_smooth_carousel_list_shortcode($atts){
 			$idd = get_the_ID();
 			$img= get_the_post_thumbnail( $post->ID, 'thumb', array ('class' => 'lazyOwl' ) );	
 			$list .= '
-				<div class="item">'.$img.'
-					<div class="tp_carousel_content">
+				<div class="item" style="margin:'.$margin.'">'.$img.'
+					<div class="tp_carousel_content" style="display:'.$content_style.';">
 						<h1>'.get_the_title().'</h1>
 						<p>'.get_the_excerpt().'</p>			
 						<div class="tp_read_more"><a href="'.get_the_permalink().'">Read More</a></div>						
