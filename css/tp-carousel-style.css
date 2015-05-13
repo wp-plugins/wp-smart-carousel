@@ -99,7 +99,7 @@ div.tp_carousel_content div.tp_read_more a:hover {
 /*Pagination Button Style*/
 .owl-carousel .owl-pagination {
     text-align: center;
-    margin-top: 10px
+    margin-top: 5px
     }
 
 .owl-carousel .owl-pagination div {
@@ -108,9 +108,9 @@ div.tp_carousel_content div.tp_read_more a:hover {
     -webkit-border-radius: 500px;
     border-radius: 500px;
     display: inline-block;
-    height: 15px;
+    height: 12px;
     margin: 0 5px;
-    width: 15px
+    width: 12px
     }
 
 .owl-carousel .owl-pagination div.active {
