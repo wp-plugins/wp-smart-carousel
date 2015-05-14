@@ -11,8 +11,13 @@ WP Smart Carousel Plugin Super Lightweight, Fully Responsive and easy to install
 == Description ==
 
 In this smart carosuel you will get various style and feature with dynamic multiple shortcode. WP Smart Carousel it's supper easy to use.
+Use shortcode anywhere in your theme just  copy your shortcode and replace into this "YOUR_SHORTCODE" area to your shortcode 
+`<?php echo do_shortcode('YOUR_SHORTCODE'); ?>`
 
-<h3>Plugin Demo url:</h3> <a href="http://touchpointdev.com/wp-smart-carousel/" target="_blank">http://touchpointdev.com/wp-smart-carousel/</a>
+<ul>
+	<li><h4><a href="http://touchpointdev.com/wp-smart-carousel/" target="_blank">Live Demo:</a></h4></li>
+	<li><h4><a href="http://touchpointdev.com/wp-smart-carousel/" target="_blank">For More Details:</a></h4></li>
+</ul>
 
 <h3>Example-1</h3>
 <strong>Carousel With Navigation</strong>
@@ -20,11 +25,19 @@ In this smart carosuel you will get various style and feature with dynamic multi
 
 <h3>Example-2</h3>
 <strong>Carousel With Pagination</strong>
-<pre>[tp_carousel id="2" navigation="false" pagination="true" autoplay="false"]</pre>
+<pre>[tp_carousel id="2" navigation="true"  autoplay="false"]</pre>
 
 <h3>Example-3</h3>
 <strong>Item Variations</strong>
-<pre>[tp_carousel id="3" items="5"  autoplay="false"  pagination="true" ]</pre>
+<pre>[tp_carousel id="3" items="5"  autoplay="false"]</pre>
+
+<h3>Example-3</h3>
+<strong>Item Variations</strong>
+<pre>[tp_carousel id="4" items="5"  autoplay="false" content_style="none"]</pre>
+
+<h3>Shortcode Guideline</h3>
+<strong>If you want to make your post category or post content carosuel then you have to use this shortcode</strong>
+<pre>[tp_carousel id="5" items="5" post_type="post" category="your_category_name"]</pre>
 
 <strong>Do you want More options, features and style? then wait for premium version soon we will be release premium version there you will get lot's of variation of this plugin. Thanks </strong>
 
