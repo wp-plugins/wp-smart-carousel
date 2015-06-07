@@ -33,63 +33,45 @@ function tp_smooth_carousel_files(){
 add_action( 'wp_enqueue_scripts', 'tp_smooth_carousel_files' );
 
 
-
-/* Add Slider Shortcode Button on Post Visual Editor */
-function tpcarousel_button_function() {
-	add_filter ("mce_external_plugins", "tpcarosel_button_js");
-	add_filter ("mce_buttons", "tpcarosel_button");
+// Hooks your functions into the correct filters
+function tp_carosuel_mce_button() {
+	// check user permissions
+	if ( !current_user_can( 'edit_posts' ) && !current_user_can( 'edit_pages' ) ) {
+		return;
+	}
+	// check if WYSIWYG is enabled
+	if ( 'true' == get_user_option( 'rich_editing' ) ) {
+		add_filter( 'mce_external_plugins', 'tp_carosuel_tinymce_plugin' );
+		add_filter( 'mce_buttons', 'tp_carosuel_register_mce_button' );
+	}
 }
+add_action('admin_head', 'tp_carosuel_mce_button');
 
-function tpcarosel_button_js($plugin_array) {
-	$plugin_array['tpcarous'] = plugins_url('js/custom-button.js', __FILE__);
+// Declare script for new button
+function tp_carosuel_tinymce_plugin( $plugin_array ) {
+	$plugin_array['tp_carosuel_button'] = plugins_url('js/mce-button.js', __FILE__);
 	return $plugin_array;
 }
 
-function tpcarosel_button($buttons) {
-	array_push ($buttons, 'tpcarosel');
+// Register new button in the editor
+function tp_carosuel_register_mce_button( $buttons ) {
+	array_push( $buttons, 'tp_carosuel_button' );
 	return $buttons;
 }
-add_action ('init', 'tpcarousel_button_function'); 
 
+//Tinymc css load functions
 
-// register custom post
-add_action( 'init', 'tp_carousel_post_type' );
-function tp_carousel_post_type() {
-	register_post_type( 'tp-carousel-items',
-		array(
-			'labels' => array(
-				'name' => __( 'Smart Carousels' ),
-				'singular_name' => __( 'Smart Carousel' ),
-				'add_new_item' => __( 'Add New Service' )
-			),
-			'public' => true,
-			'supports' => array('thumbnail', 'title', 'custom-fields', 'editor'),
-			'has_archive' => true,
-			'rewrite' => array('slug' => 'carousel-items'),
-		)
-	);	
+function tp_carosuel_mce_css() {
+	wp_enqueue_style('tp_caroseul_shortcode', plugins_url('/inc/tp-mcetwo-style.css', __FILE__) );
 }
+add_action( 'admin_enqueue_scripts', 'tp_carosuel_mce_css' );
 
-//Register Taxonomy for custom post.
-function tp_carousel_taxonomy() {
-	register_taxonomy(
-		'tpcarousel_cat',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
-		'tp-carousel-items',                  // ur custom post type name
-		array(
-			'hierarchical'          => true,
-			'label'                 => 'Carousel Category',  //Display name
-			'query_var'             => true,
-			'hierarchical'     	 	=> true,
-			'show_ui'          	 	=> true,
-			'show_admin_column' 	=> true,
-			'rewrite'               => array(
-				'slug'              => 'carousel-category', // This controls the base slug that will display before each term
-				'with_front'    => true // Don't display the category base before
-				)
-			)
-	);
-}
-add_action( 'init', 'tp_carousel_taxonomy');  
+
+//includes files
+include_once('inc/tp_carosuel_custom.php');
+
+//filter files
+add_filter('widget_text', 'do_shortcode');
 
 
 add_theme_support( 'post-thumbnails', array( 'post', 'tp-carousel-items' ) );
@@ -104,14 +86,14 @@ add_filter( 'excerpt_length', 'tp_custom_excerpt_length', 999 );
 function tp_smooth_carousel_list_shortcode($atts){
 	extract( shortcode_atts( array(
 		'id' => 'demo',
-		'count' => '10',
+		'count' => '-1',
 		'items' => '4',
 		'navigation' => 'false',
+		'pagination' => 'true',		
 		'post_type' => 'tp-carousel-items',
 		'margin' => '4px',
 		'autoplay' => 'true',
 		'content_style' => 'block',
-		'pagination' => 'true',
 		'custom_category' => '',
 		'post_category' => '',
 	), $atts, 'projects' ) );
@@ -129,6 +111,7 @@ function tp_smooth_carousel_list_shortcode($atts){
 			lazyLoad : true,
 			stopOnHover : true,
 			pagination : '.$pagination.',
+			theme: "tp-carosuel-css",	
 			navigation : '.$navigation.',
 			navigationText: ["",""]
 			});
