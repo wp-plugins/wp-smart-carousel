@@ -45,7 +45,7 @@ div.tp_carousel_content div.tp_read_more a:hover {
     }
 
 /*Nevigation Button Style*/
-.owl-carousel .owl-controls .owl-buttons {
+.owl-carousel.tp-carosuel-css .owl-controls .owl-buttons {
     left: 0;
     margin-top: -20px;
     position: absolute;
@@ -54,7 +54,7 @@ div.tp_carousel_content div.tp_read_more a:hover {
     width: 100%
     }
 
-.owl-carousel .owl-controls .owl-buttons div {
+.owl-carousel.tp-carosuel-css .owl-controls .owl-buttons div {
     display: inline-block;
     font-size: 20px;
     -moz-border-radius: 0;
@@ -72,13 +72,13 @@ div.tp_carousel_content div.tp_read_more a:hover {
     transition: all 0.5s ease 0s;
     }
 
-.owl-carousel .owl-controls .owl-buttons div:hover {
+.owl-carousel.tp-carosuel-css .owl-controls .owl-buttons div:hover {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     filter: alpha(opacity=100);
     opacity: 1
     }
 
-.owl-carousel .owl-controls .owl-buttons div.owl-prev {
+.owl-carousel.tp-carosuel-css .owl-controls .owl-buttons div.owl-prev {
     margin-left: -26px;
     background: url(../img/angle.png) no-repeat scroll center center #666;
     padding: 17px 19px;
@@ -89,7 +89,7 @@ div.tp_carousel_content div.tp_read_more a:hover {
     transform: rotate(180deg)
     }
 
-.owl-carousel .owl-controls .owl-buttons div.owl-next {
+.owl-carousel.tp-carosuel-css .owl-controls .owl-buttons div.owl-next {
   background: url("../img/angle.png") no-repeat scroll center center #666;
   padding: 17px 19px;
   position: absolute;
@@ -97,12 +97,12 @@ div.tp_carousel_content div.tp_read_more a:hover {
 }
 
 /*Pagination Button Style*/
-.owl-carousel .owl-pagination {
+.owl-carousel.tp-carosuel-css .owl-pagination {
     text-align: center;
     margin-top: 4px
     }
 
-.owl-carousel .owl-pagination div {
+.owl-carousel.tp-carosuel-css .owl-pagination div {
     background: #D4D4D4;
     -moz-border-radius: 500px;
     -webkit-border-radius: 500px;
@@ -113,6 +113,6 @@ div.tp_carousel_content div.tp_read_more a:hover {
     width: 12px
     }
 
-.owl-carousel .owl-pagination div.active {
+.owl-carousel.tp-carosuel-css .owl-pagination div.active {
     background: #4aa3df
     }
