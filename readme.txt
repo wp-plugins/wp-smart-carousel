@@ -20,7 +20,7 @@ Use shortcode anywhere in your theme just  copy your shortcode and replace into 
 </ul>
 
 <h3>Example-1</h3>
-<strong>Carousel With Navigation</strong>
+<strong>Default Shortcode</strong>
 <pre>[tp_carousel]</pre>
 
 <h3>Example-2</h3>
@@ -72,6 +72,7 @@ Soon premium version will be release there you can get lot's of more options and
 == Screenshots ==
 1. Plugin Demo Screenshot
 2. Plugin Generate Shortcode Button
+3. Demo Screenshot Two
 
 == Changelog ==
 
