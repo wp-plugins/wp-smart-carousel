@@ -11,7 +11,7 @@ function tp_carousel_post_type() {
 				'add_new_item' => __( 'Add New Service' )
 			),
 			'public' => true,
-			'supports' => array('thumbnail', 'title', 'custom-fields', 'editor'),
+			'supports' => array('thumbnail', 'title', 'editor'),
 			'has_archive' => true,
 			'rewrite' => array('slug' => 'carousel-items'),
 		)
