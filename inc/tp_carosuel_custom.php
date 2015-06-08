@@ -8,7 +8,7 @@ function tp_carousel_post_type() {
 			'labels' => array(
 				'name' => __( 'Smart Carousels' ),
 				'singular_name' => __( 'Smart Carousel' ),
-				'add_new_item' => __( 'Add New Service' )
+				'add_new_item' => __( 'Add New Carousel' )
 			),
 			'public' => true,
 			'supports' => array('thumbnail', 'title', 'editor'),
