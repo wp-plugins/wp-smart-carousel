@@ -19,7 +19,7 @@ Use shortcode anywhere in your theme just  copy your shortcode and replace into 
 	<li><h4><a href="http://wppluginarea.com/wp-smart-carousel/" target="_blank">For More Details:</a></h4></li>
 </ul>
 
-https://youtu.be/DbMHXQj3N6U
+https://www.youtube.com/watch?v=DbMHXQj3N6U&feature=youtu.be
 
 <h3>Example-1</h3>
 <strong>Default Shortcode</strong>
