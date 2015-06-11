@@ -125,17 +125,19 @@ function tp_smooth_carousel_list_shortcode($atts){
 }
 </style>
 
-	<div id="owl'.$id.'" class="owl-carousel"> '; 
+	<div id="owl'.$id.'" class="owl-carousel tp_extra_cls"> '; 
 		while($q->have_posts()) : $q->the_post();
 			$idd = get_the_ID();
 			$img= get_the_post_thumbnail( $post->ID, 'thumb', array ('class' => 'lazyOwl' ) );	
 			$list .= '
 				<div class="item" style="margin:'.$margin.'">'.$img.'
-					<div class="tp_carousel_content" style="display:'.$content_style.';">
-						<h1>'.get_the_title().'</h1>
-						<p>'.get_the_excerpt().'</p>			
-						<div class="tp_read_more"><a href="'.get_the_permalink().'">Read More</a></div>						
-					</div>
+					<a href="'.get_the_permalink().'" target="_blank">				
+						<div class="tp_carousel_content" style="display:'.$content_style.';">
+							<h1>'.get_the_title().'</h1>
+							<p>'.get_the_excerpt().'</p>
+						<div class="tp_read_more">Read More</div>								
+						</div>
+					</a>
 				</div>
 
 				';        
