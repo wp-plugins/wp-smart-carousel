@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: WP Smart Carousel
-Plugin URI:  http://touchpointdev.com/wp-smart-carousel/
+Plugin URI:  http://wppluginarea.com/wp-smart-carousel/
 Description: In this smart carosuel you will get various style and feature with dynamic multiple shortcode. WP Smart Carousel it's supper easy to use.
-Author: Touch Point Dev
-Author URI: http://touchpointdev.com
+Author: Wp Plugin Area
+Author URI: http://wppluginarea.com
 Version: 2.1
 */
 
@@ -86,7 +86,7 @@ add_filter( 'excerpt_length', 'tp_custom_excerpt_length', 999 );
 function tp_smooth_carousel_list_shortcode($atts){
 	extract( shortcode_atts( array(
 		'id' => 'demo',
-		'count' => '-1',
+		'count' => '8',
 		'items' => '4',
 		'navigation' => 'false',
 		'pagination' => 'true',		
