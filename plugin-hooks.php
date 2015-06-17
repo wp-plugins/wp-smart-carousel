@@ -86,7 +86,7 @@ add_filter( 'excerpt_length', 'tp_custom_excerpt_length', 999 );
 function tp_smooth_carousel_list_shortcode($atts){
 	extract( shortcode_atts( array(
 		'id' => 'demo',
-		'count' => '8',
+		'count' => '10',
 		'items' => '4',
 		'navigation' => 'false',
 		'pagination' => 'true',		
